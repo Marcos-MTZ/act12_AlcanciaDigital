@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulador Alcancía Digital</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container py-4">
+
+    <!-- Saldo -->
+    <div class="card mb-4 borde-azul">
+      <div class="card-body">
+        <h4 class="card-title">Saldo Total Almacenado:</h4>
+        <div id="saldoTotal" class="saldo-principal">$0.00</div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <!-- Depositos -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="titulo-verde">Ahorrar Dinero (Depósito)</h5>
+            <p>Selecciona la denominación a "meter" en tu alcancía:</p>
+
+            <div id="contenedorDenominaciones" class="d-grid gap-2 grid-denoms">
+              <button class="btn btn-denom" data-monto="1">$1</button>
+              <button class="btn btn-denom" data-monto="2">$2</button>
+              <button class="btn btn-denom" data-monto="5">$5</button>
+
+              <button class="btn btn-denom" data-monto="10">$10</button>
+              <button class="btn btn-denom" data-monto="20">$20</button>
+              <button class="btn btn-denom" data-monto="50">$50</button>
+
+              <button class="btn btn-denom" data-monto="100">$100</button>
+              <button class="btn btn-denom" data-monto="200">$200</button>
+              <button class="btn btn-denom" data-monto="500">$500</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Retiros -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="titulo-rojo">Retirar Dinero (Sacar)</h5>
+            <p>Ingresa la cantidad que deseas retirar:</p>
+
+            <form id="formularioRetiro" class="d-flex flex-column gap-2">
+              <input id="montoRetiro" type="number" step="0.01" min="0" class="form-control" placeholder="Ej: 50.00">
+              <div class="d-flex gap-2">
+                <button id="btnSacar" type="submit" class="btn btn-danger fw-bold flex-grow-1">Sacar Dinero</button>
+                <button id="btnLimpiar" type="button" class="btn btn-outline-secondary">Limpiar historial</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Historial -->
+    <div class="card">
+      <div class="card-body">
+        <h5>Detalle de Movimientos</h5>
+        <div class="table-responsive">
+          <table class="table table-borderless table-striped mt-2">
+            <thead class="small text-muted">
+              <tr>
+                <th>Fecha y Hora</th>
+                <th>Tipo</th>
+                <th class="text-end">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoMovimientos">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
