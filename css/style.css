@@ -1,0 +1,61 @@
+:root{
+  --azul-principal: #2b8cff;
+  --verde: #13a66a;
+  --rojo: #e04a4a;
+}
+
+body {
+  background: #f5f7f9;
+  color: #222;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.borde-azul {
+  border-top: 5px solid var(--azul-principal);
+}
+.saldo-principal {
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--azul-principal);
+  margin-top: 8px;
+}
+
+.titulo-verde { color: var(--verde); font-weight: 700; }
+.titulo-rojo { color: var(--rojo); font-weight: 700; }
+
+.grid-denoms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.btn-denom {
+  background: #f0f2f4;
+  border: 1px solid #e0e6ea;
+  color: #222;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: transform .06s ease, box-shadow .06s;
+}
+.btn-denom:active { 
+    transform: translateY(1px); 
+}
+.btn-denom:hover { 
+    box-shadow: 0 6px 12px rgba(30,30,30,0.04); 
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+  padding: 12px 8px;
+}
+
+.tipo-deposito { 
+    color: var(--verde); 
+    font-weight: 700; 
+}
+
+.tipo-retiro { 
+    color: var(--rojo); 
+    font-weight: 700; 
+}
